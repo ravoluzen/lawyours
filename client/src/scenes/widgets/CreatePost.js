@@ -46,7 +46,7 @@ const CreatePost = ({ picturePath }) => {
         }
         console.log(formData);
 
-        const response = await fetch(`REACT_APP_HOST/posts`, {
+        const response = await fetch(`${process.env.REACT_APP_HOST}/posts`, {
             method: "POST",
             headers: { Authorization: `Bearer ${token}` },
             body: formData,
