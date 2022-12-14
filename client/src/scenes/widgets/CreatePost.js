@@ -50,10 +50,10 @@ const CreatePost = ({ picturePath }) => {
             method: "POST",
             headers: { Authorization: `Bearer ${token}` },
             body: formData,
-        }).then(response => response.json());
-        //const posts = await response.json();
-        console.log(response);
-        dispatch(setPosts({ response }));
+        });
+        const posts = await response.json();
+        console.log(posts);
+        dispatch(setPosts({ posts }));
         setImage(null);
         setIsImage(null);
         setPost("");
